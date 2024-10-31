@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'store/styles.css' %}">
+</head>
+<body>
+    <h1>Product List</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - Ksh {{ product.price }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'store/styles.css' %}">
+</head>
+<body>
+    <h1>Product List</h1>
+    <div>
+        {% for category in categories %}
+            <h2>{{ category.name }}</h2>
+            <ul>
+                {% for product in category.products.all %}
+                    <li>
+                        <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - Ksh {{ product.price }}
+                    </li>
+                {% empty %}
+                    <li>No products available in this category.</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+</body>
+</html>
