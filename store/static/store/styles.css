@@ -1,15 +1,153 @@
-body {
-    font-family: Arial, sans-serif;
+/* General styling for the store */
+.store-header {
+    text-align: center;
+    padding: 50px 0;
 }
 
-h1 {
+.store-header h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style for product categories */
+.category-title {
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-card .category {
+    color: #888;
+    font-weight: bold;
+}
+
+/* Responsive grid for products */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* Specific styles for product cards */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    font-size: 1.4rem;
+    margin: 15px 0;
     color: #333;
 }
 
-ul {
-    list-style-type: none;
+.product-card .price {
+    font-size: 1.3rem;
+    color: #28a745;
 }
 
-li {
+.product-card a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.product-card a:hover {
+    background-color: #0056b3;
+}
+
+/* Add product info hover effect */
+.product-card .info {
+    font-size: 0.9rem;
+    color: #555;
     margin: 10px 0;
+}
+
+/* Card layout for specific categories */
+.groceries .product-card {
+    border-color: #ff6347;
+}
+
+.electronics .product-card {
+    border-color: #4b8df8;
+}
+
+.fresh-produce .product-card {
+    border-color: #32a852;
+}
+
+.dairy .product-card {
+    border-color: #f7a325;
+}
+
+.bakery .product-card {
+    border-color: #ffb84c;
+}
+
+.frozen-foods .product-card {
+    border-color: #6bb3f1;
+}
+
+.meat-seafood .product-card {
+    border-color: #f84f5c;
+}
+
+.canned-packaged .product-card {
+    border-color: #4fa7a4;
+}
+
+.snacks .product-card {
+    border-color: #f1a23e;
+}
+
+.beverages .product-card {
+    border-color: #3c8d8d;
+}
+
+.household .product-card {
+    border-color: #96c1bf;
+}
+
+.health-beauty .product-card {
+    border-color: #f36f6f;
+}
+
+.pet-care .product-card {
+    border-color: #8cbe8b;
+}
+
+.specialty .product-card {
+    border-color: #9e2a2e;
+}
+
+.alcohol-tobacco .product-card {
+    border-color: #c7511f;
+}
+
+.promotional .product-card {
+    border-color: #d84f00;
 }

@@ -1,22 +1,43 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Products</title>
+    <title>Product List</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'store/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'store/styles.css' %}"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <h1>Product List</h1>
-    <ul>
-        {% for product in products %}
-            <li>
-                <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - Ksh {{ product.price }}
-            </li>
+    <div class="container">
+        <h1>Our Products</h1>
+
+        <h2>Welcome to quickmat store, shop at reduced prices and high discounts </h2>
+
+        {% for category in categories %}
+            <h2>{{ category.name }}</h2> <!-- Display Category Name -->
+            
+            <!-- If there are products in this category, display them in a grid layout -->
+            <div class="product-grid">
+                {% for product in category.products.all %}
+                    <div class="product-card">
+                        <!-- <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image"> Product Image -->
+                        <h3 class="product-name">{{ product.name }}</h3> <!-- Product Name -->
+                        <p class="product-category">{{ product.category.name }}</p> <!-- Product Category -->
+                        <p class="product-price">Ksh {{ product.price }}</p> <!-- Product Price -->
+                        <a href="{% url 'product_detail' product.id %}" class="product-link">View Details</a> <!-- Link to Product Detail Page -->
+                    </div>
+                {% empty %}
+                    <p>No products available in this category.</p> <!-- Message if no products in category -->
+                {% endfor %}
+            </div>
+
         {% endfor %}
-    </ul>
+    </div>
 </body>
-</html> -->
+</html>
+
+
+
+<!-- 
 
 
 <!DOCTYPE html>
@@ -44,4 +65,4 @@
         {% endfor %}
     </div>
 </body>
-</html>
+</html> -->
